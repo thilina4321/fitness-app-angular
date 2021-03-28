@@ -1,0 +1,13 @@
+<mat-tab-group *ngIf="!showNew">
+  <mat-tab label="New Exerice">
+    <app-new-train></app-new-train>
+  </mat-tab>
+  <mat-tab label="Past Exerice">
+    <app-past-train></app-past-train>
+  </mat-tab>
+</mat-tab-group>
+
+<app-current-train (previousPage) = "showNew = false"
+ *ngIf="showNew">
+
+</app-current-train>

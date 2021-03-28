@@ -1,0 +1,31 @@
+<form #form="ngForm"
+ (ngSubmit)="onStart(form)">
+<mat-card *ngIf="!isTrue">
+  <mat-card-title>Start a New Activity</mat-card-title>
+  <mat-form-field>
+
+
+    <mat-select name="ex" ngModel>
+      <mat-option [value]="exerice.id"
+       *ngFor="let exerice of availableExerices">
+        {{exerice.name}}
+      </mat-option>
+
+
+    </mat-select>
+  </mat-form-field>
+
+    <mat-card-actions>
+      <button
+      style="margin-left: 70%;" mat-raised-button>Start</button>
+    </mat-card-actions>
+
+</mat-card>
+</form>
+
+<app-current-train (previousPage)="isTrue = false"
+ *ngIf="isTrue">
+
+</app-current-train>
+
+

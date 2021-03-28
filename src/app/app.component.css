@@ -1,0 +1,33 @@
+mat-sidenav-container, mat-sidenav, mat-sidenav-content{
+  height: 100%;
+}
+
+mat-sidenav{
+  width: 200px;
+}
+
+.logo{
+  width: calc(100% - 100px);
+}
+
+.toolbar__items{
+  display: inline-block;
+}
+
+.toolbar__items li{
+  display: inline-block;
+  list-style: none;
+}
+
+a{
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+a:hover, a:active{
+  color: grey;
+
+}

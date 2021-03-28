@@ -1,0 +1,62 @@
+<mat-sidenav-container color="primary">
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
+      <a *ngIf="!isAuth"
+      mat-list-item routerLink="/signUp" (click)="sidenav.close()">
+        <mat-icon>face</mat-icon>
+        <span style="padding-left: 5px;">Sign Up</span>
+      </a>
+      <a *ngIf="!isAuth"
+      mat-list-item routerLink="/logIn" (click)="sidenav.close()">
+        <mat-icon>lock</mat-icon>
+        <span style="padding-left: 5px;">Log In</span>
+      </a>
+      <a *ngIf="isAuth"
+      mat-list-item routerLink="/training" (click)="sidenav.close()">
+        <mat-icon>eco</mat-icon>
+        <span style="padding-left: 5px;">Training</span>
+      </a>
+      <mat-list-item *ngIf="isAuth">
+        <button (click)="authState()"
+        mat-icon-button (click)="sidenav.close()">
+          <mat-icon>eject</mat-icon>
+        <span style="padding-left: 5px;">Log Out</span>
+        </button>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+    <mat-toolbar color="primary">
+        <button fxHide.gt-xs
+         mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <div
+       class="logo">
+        <a routerLink="">Logo</a>
+      </div>
+
+
+      <ul class="toolbar__items" fxHide.xs>
+        <li *ngIf="!isAuth">
+          <a routerLink="/signUp">Sign Up</a>
+        </li>
+        <li *ngIf="!isAuth">
+          <a routerLink="/logIn">Log In</a>
+        </li>
+        <li *ngIf="isAuth">
+          <a routerLink="/training">Tranining</a>
+        </li>
+        <li *ngIf="isAuth">
+          <a routerLink="/logIn" (click)="authState()">Log Out</a>
+        </li>
+      </ul>
+    </mat-toolbar>
+
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

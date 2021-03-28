@@ -1,0 +1,11 @@
+<div>
+  <mat-progress-spinner mode="determinate" [value]="progress">
+
+  </mat-progress-spinner>
+
+  <h1> {{progress}}% </h1>
+    <p>Keep up your good work</p>
+    <button (click)="onStop()"
+    mat-stroked-button color="accent">Stop</button>
+
+</div>

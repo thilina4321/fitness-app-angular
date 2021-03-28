@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "fitness-app-d8d8f": {
+      "hosting": {
+        "fitness": [
+          "fitness-app-d8d8f"
+        ]
+      }
+    }
+  }
+}
